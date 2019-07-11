@@ -1,0 +1,13 @@
+img{
+    width:250px;
+    border-radius: 15px;
+    margin:20px;
+}
+#pic1:hover {
+    box-shadow: 10px 10px 10px #444;
+}
+
+#pic2 {
+    box-shadow: 10px 10px 10px #400;
+    transform: rotate(15deg)
+}
