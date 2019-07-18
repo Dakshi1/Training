@@ -9,8 +9,9 @@ const app=express();
 const port=process.env.PORT || 4000;
 app.use(express.static(path.join(__dirname, 'www')));
 app.use((req, resp, next) =>{
+    console.log('cors called')
     resp.set('Access-Control-Allow-Origin', '*');
-    resp.set('Access-Control-Allow-Methods', 'POST, DELETE, PUT, GET');
+    resp.set('Access-Control-Allow-Methods', 'POST,DELETE,PUT,GET');
     resp.set('Access-Control-Allow-Handlers', '*');
     next();
 })
@@ -22,7 +23,7 @@ app.get('/api/contacts/', (req, resp) =>{
         .then(data => resp.json(data));
 });
     
-app.delete('/app/contacts/:id', (req, resp)=>{
+app.delete('/api/contacts/:id', (req, resp)=>{
     let id=req.params['id'];
     service.deleteContact(id)
             .then(()=>resp.end('contact deleted'))

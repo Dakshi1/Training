@@ -48,7 +48,7 @@ module.exports.deleteContact = async (id) => {
     const _id = ObjectId(id);
     const conn = await MongoClient.connect(url, { useNewUrlParser: true });
     const contacts = conn.db('trainingdb').collection('contacts');
-    return await contacts.deleteOne(_id);
+    return await contacts.deleteOne({_id});
 }
 module.exports.getAllContacts = async (options = {}) => {
     let {
