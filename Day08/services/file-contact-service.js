@@ -31,7 +31,25 @@ class ContactService {
         return ;
     }
     deleteContact(id, callbackFn) {
-        
+         if (!callbackFn || typeof callbackFn != 'function') {
+            callbackFn('callbackFn was not supplied or was not a function');
+            return;
+        }
+        const index = data.findIndex(c => c.id === id);
+        if (index === -1) {
+            callbackFn('id does not exist');
+            return;
+        }
+        let newData=data.splice(index, 1);
+        setTimeout(() => {
+        fs.writeFile(filename, JSON.stringify(newData), (err) => {
+                if (err) {
+                    callbackFn(err);
+                    return;
+                }
+                callbackFn(null, 'deleted successfully');
+            });
+        }, 0);
     }
     updateContact(contact, callbackFn) {
 
