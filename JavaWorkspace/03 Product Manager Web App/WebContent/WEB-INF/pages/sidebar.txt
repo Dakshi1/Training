@@ -1,0 +1,7 @@
+<ul class="list-group">
+					<li class="list-group-item"><a href="./">Home</a></li>
+					<li class="list-group-item"><a href="get-all-products">List All Products</a></li>
+					<li class="list-group-item"><a href="./">Discontinued Products</a></li>
+					<li class="list-group-item"><a href="./">Add New Product</a></li>
+					<li class="list-group-item"><a href="./">About Us</a></li>
+</ul>
