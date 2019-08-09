@@ -70,14 +70,16 @@ public class ArrayListProductDao implements ProductDao {
 		
 	}
 
+	
+
+	
 	@Override
-	public Integer deleteProduct(Product product) throws DaoException {
+	public Product getProduct(Integer productId) throws DaoException {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 	@Override
-	public Integer getProduct(Integer productId) throws DaoException {
+	public Product deleteProduct(Integer productId) throws DaoException {
 		// TODO Auto-generated method stub
 		return null;
 	}

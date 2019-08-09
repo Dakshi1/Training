@@ -22,7 +22,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @Setter
 @Getter
-@ToString(of = { "productName", "unitPrice" })
+@ToString //(of = { "productName", "unitPrice" })
 public class Product {
 	// fields
 	

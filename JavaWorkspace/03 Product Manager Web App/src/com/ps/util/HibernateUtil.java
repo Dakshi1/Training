@@ -7,17 +7,21 @@ import com.ps.entity.Product;
 
 public final class HibernateUtil {
 
+	
+	private static SessionFactory factory;
 	private HibernateUtil() {
 		
 	}
 	
 	public static SessionFactory getSessionFactory() {
 		
-		
+		if(factory!=null)
+			return factory;
 		Configuration cfg = new Configuration();// empty configuration object
 		cfg.configure(); // reads and initializes itself from hibernate.cfg.xml
 		
 		cfg.addAnnotatedClass(Product.class);
-		return cfg.buildSessionFactory();
+		factory= cfg.buildSessionFactory();
+		return factory;
 	}
 }

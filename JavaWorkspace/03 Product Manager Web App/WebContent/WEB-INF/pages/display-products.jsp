@@ -7,7 +7,7 @@
 		<tr>
 			<th>Product Name</th>
 			<th>Quantity per unit</th>
-			<th>Unit pric</th>
+			<th>Unit price</th>
 			<th>Discontinued ?</th>
 		</tr>
 	</thead>

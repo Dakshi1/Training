@@ -12,10 +12,10 @@ public class P01_GetOneProduct {
 		SessionFactory factory=HibernateUtil.getSessionFactory();
 		Session session=factory.openSession(); // creates a new instance of session
 		
-		//Product p1=session.get(Product.class, 9);
+		Product p1=session.get(Product.class, 1);
 		System.out.println("hello ");
 		session.close();
 		factory.close();
-		//System.out.println(p1);
+		System.out.println(p1);
 	}
 }

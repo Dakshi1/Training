@@ -15,24 +15,23 @@ import com.ps.dao.DaoFactory;
 import com.ps.dao.ProductDao;
 import com.ps.entity.Product;
 
-@WebServlet("/get-all-products")
-public class GetAllProducts extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+@WebServlet("/get-discontinued-products")
+public class GetDiscontinuedProducts extends HttpServlet {
+	//private static final long serialVersionUID = 1L;
        
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		try {
 			ProductDao dao=DaoFactory.getProductDao("hibernate");
-			Collection<Product> list=dao.getAllProducts();
+			Collection<Product> list=dao.getDiscontinuedProducts();
 			request.setAttribute("products", list);
 			request.setAttribute("title", "list");
 			
 			String viewName="/WEB-INF/pages/display-products.jsp";
 			RequestDispatcher rd=request.getRequestDispatcher(viewName);
 			rd.forward(request, response);
-			}
-		catch(DaoException e)
+			}catch(DaoException e)
 		
 		
 		{

@@ -10,11 +10,11 @@ public interface ProductDao {
 	
 	public Integer addNewProduct(Product product) throws DaoException;
 	
-	public Integer getProduct(Integer productId) throws DaoException;
+	public Product getProduct(Integer productId) throws DaoException;
 	
 	public void updateProduct(Product product) throws DaoException;
 	
-	public Integer deleteProduct(Product product) throws DaoException;
+	public Product deleteProduct(Integer productId) throws DaoException;
 	
 	
 	// Queries
@@ -29,6 +29,8 @@ public interface ProductDao {
 	
 	public Collection<Product> getProductsByName(String namePattern) throws DaoException;
 	
-	public Integer count();
+	public Integer count() throws DaoException;
+
+	//Product deleteProduct(Integer productId) throws DaoException;
 	
 }

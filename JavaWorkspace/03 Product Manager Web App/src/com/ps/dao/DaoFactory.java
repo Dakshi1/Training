@@ -11,14 +11,14 @@ public final class DaoFactory {
 
 	public static ProductDao getProductDao() throws DaoException {
 		switch (discriminator) {
-		case "jdbc":
-			return new ArrayListProductDao();
+		case "hibernate":
+			return new HibernateProductDao();
 			//return new CsvProductDao();
 		case "dummy":
 			//return new DummyProductDao();
 		case "jdc":
 			throw new DaoException("No implementation for jdbc yet");
-		case "hibernate":
+		case "hiberenate":
 			throw new DaoException("No implementation for hibernate yet");
 		default:
 			throw new DaoException("Unknown type for discriminator: " + discriminator);
